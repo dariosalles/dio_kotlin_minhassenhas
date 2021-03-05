@@ -54,7 +54,8 @@
             android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-mail" />
+            android:hint="E-mail"
+            android:text="@string/emailpadrao" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,7 +76,9 @@
             android:id="@+id/inputSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Senha" />
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:text="@string/senhapadrao" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
