@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MinhasSenhas">
         <activity android:name=".Senhas"></activity>
+        <activity android:name=".SenhasDetail"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

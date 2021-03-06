@@ -36,8 +36,8 @@ class SenhasDetail : AppCompatActivity() {
     private fun bindViews() {
         findViewById<TextView>(R.id.tv_Login).text = senha?.login
         findViewById<TextView>(R.id.tv_Senha).text = senha?.senha
-        findViewById<TextView>(R.id.tv_Categoria).text = senha?.categoria
-        findViewById<TextView>(R.id.tv_Obs).text = senha?.observacao
+//        findViewById<TextView>(R.id.tv_Categoria).text = senha?.categoria
+//        findViewById<TextView>(R.id.tv_Obs).text = senha?.observacao
 
     }
 
