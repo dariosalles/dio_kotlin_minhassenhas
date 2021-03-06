@@ -39,13 +39,13 @@ class Senhas : AppCompatActivity(), ClickItemSenhasListener {
     private fun listSenhas() {
         var list = arrayListOf(
             Password(
-                "dariosalles@gmail.com",
+                "email@gmail.com",
                 "123456",
                 "Social",
                 "Gmail"
             ),
             Password(
-                "silviacamilo09@gmail.com",
+                "email@hotmail.com",
                 "123456",
                 "Social",
                 "Facebook"

@@ -14,39 +14,52 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+
         <ImageView
-            android:id="@+id/iv_photograph"
-            android:layout_width="48dp"
-            android:layout_height="51dp"
-            android:contentDescription="@string/logo_description"
-            app:layout_constraintBottom_toBottomOf="@id/tv_Senha"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_Login"
-            tools:src="@tools:sample/avatars" />
+            android:id="@+id/imageView4"
+            android:layout_width="83dp"
+            android:layout_height="78dp"
+            app:srcCompat="@drawable/item_senha"
+            tools:layout_editor_absoluteX="-3dp"
+            tools:layout_editor_absoluteY="-4dp" />
+
+        <TextView
+            android:id="@+id/tv_Obs"
+            android:layout_width="79dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Categoria"
+            tools:text="Observação" />
+
+        <TextView
+            android:id="@+id/tv_Categoria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="28dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Login"
+            tools:text="Categoria" />
 
         <TextView
             android:id="@+id/tv_Login"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/iv_photograph"
-            app:layout_constraintTop_toTopOf="@+id/iv_photograph"
-            tools:text="Login" />
-
-
-        <TextView
-            android:id="@+id/tv_Senha"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/iv_photograph"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Login"
-            tools:text="Senha" />
-
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Login" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

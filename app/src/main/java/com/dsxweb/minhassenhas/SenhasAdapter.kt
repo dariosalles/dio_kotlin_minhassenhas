@@ -42,8 +42,8 @@ class SenhasAdapter(var listener: ClickItemSenhasListener) :RecyclerView.Adapter
                                    var listener: ClickItemSenhasListener) : RecyclerView.ViewHolder(itemView) {
 
         private val tvLogin: TextView = itemView.findViewById(R.id.tv_Login)
-        private val tvSenha: TextView = itemView.findViewById(R.id.tv_Senha)
-        //private val ivPhotograph: ImageView = itemView.findViewById(R.id.iv_photograph)
+        private val tvCategoria: TextView = itemView.findViewById(R.id.tv_Categoria)
+        private val tvObs: TextView = itemView.findViewById(R.id.tv_Obs)
 
         init {
             itemView.setOnClickListener {
@@ -53,7 +53,8 @@ class SenhasAdapter(var listener: ClickItemSenhasListener) :RecyclerView.Adapter
 
         fun bind(senha: Password){
             tvLogin.text = senha.login
-            tvSenha.text = senha.senha
+            tvCategoria.text = senha.categoria
+            tvObs.text = senha.observacao
         }
     }
 }
