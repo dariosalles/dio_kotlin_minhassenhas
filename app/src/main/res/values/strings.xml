@@ -2,6 +2,6 @@
     <string name="app_name">Minhas Senhas</string>
     <string name="logo_description">Minhas Senhas</string>
     <string name="txtBusca">Qual senha quer buscar?</string>
-    <string name="emailpadrao">email@email.com</string>
-    <string name="senhapadrao">12345</string>
+    <string name="emailpadrao">admin@admin</string>
+    <string name="senhapadrao">123456</string>
 </resources>

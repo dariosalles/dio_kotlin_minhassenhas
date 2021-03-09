@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MinhasSenhas">
-        <activity android:name=".Senhas"></activity>
-        <activity android:name=".SenhasDetail"></activity>
+        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".SenhasActivity" />
+        <activity android:name=".SenhasDetail" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

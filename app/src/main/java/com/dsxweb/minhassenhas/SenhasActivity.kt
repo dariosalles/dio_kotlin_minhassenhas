@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dsxweb.minhassenhas.SenhasDetail.Companion.EXTRA_CONTACT
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.android.synthetic.main.activity_senhas.*
+import java.lang.Exception
 
-class Senhas : AppCompatActivity(), ClickItemSenhasListener {
+class SenhasActivity : AppCompatActivity(), ClickItemSenhasListener {
 
     private val rvList: RecyclerView by lazy {
         findViewById<RecyclerView>(R.id.rv_list)
@@ -21,46 +23,29 @@ class Senhas : AppCompatActivity(), ClickItemSenhasListener {
 
     private val adapter = SenhasAdapter(this)
 
+    //private val toast = MainActivity()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_senhas)
 
         initToolBar()
-        listSenhas()
-        bindView()
+        //listSenhas()
+        onClicks()
+        //bindView()
+    }
+
+    fun onClicks() {
+        btnBuscar.setOnClickListener { onClickBuscar() }
+        btnUser.setOnClickListener {
+            val intent = Intent(this, UserActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // instancia o SharedPreferences
     private fun getInstaceSharedPreferences() : SharedPreferences {
         return getSharedPreferences("com.dsxweb.minhassenhas.PREFERENCES", Context.MODE_PRIVATE)
-    }
-
-    //gera uma lista de senhas qualquer - simular api
-    private fun listSenhas() {
-        var list = arrayListOf(
-            Password(
-                "email@gmail.com",
-                "123456",
-                "Social",
-                "Gmail"
-            ),
-            Password(
-                "email@hotmail.com",
-                "123456",
-                "Social",
-                "Facebook"
-            )
-        )
-
-        // insere o objeto acima de senhas no SharedPreferences
-        getInstaceSharedPreferences().edit {
-            //transforma o lista de objeto em Json
-            //importacao da dependencia no gradle gson
-            val json = Gson().toJson(list)
-            putString("senhas", json)
-            commit() //grava a persistencia em uma thread separada evitando assim ao consultar os dados que a thread tenha finalizado
-        }
-
     }
 
     private fun bindView() {
@@ -75,6 +60,8 @@ class Senhas : AppCompatActivity(), ClickItemSenhasListener {
 
         // vai fazer a conversão de uma lista de string para um objeto de classe
         val formType = object : TypeToken<List<Password>>() {}.type
+
+
         return Gson().fromJson(list, formType)
     }
 
@@ -101,5 +88,19 @@ class Senhas : AppCompatActivity(), ClickItemSenhasListener {
         intent.putExtra(EXTRA_CONTACT, senha)
 
         startActivity(intent)
+    }
+
+    private fun onClickBuscar() {
+        val busca: String = inputBusca.text.toString()
+        var listaFiltrada: List<Password> = mutableListOf()
+
+        try {
+            listaFiltrada = SenhasAplication.instance.helperDB?.buscarSenhas(busca) ?: mutableListOf()
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
+
+        println(listaFiltrada.toString())
+
     }
 }

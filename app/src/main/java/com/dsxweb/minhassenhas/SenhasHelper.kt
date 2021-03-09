@@ -6,13 +6,13 @@ import com.google.gson.reflect.TypeToken
 
 class SenhasHelper(private val sharedPreferences: SharedPreferences) {
 
-    fun getListContacts(): List<Password> {
+    fun getListSenhas(): List<Password> {
         val list = sharedPreferences.getString("senhas", "[]")
         val formType = object : TypeToken<List<Password>>() {}.type
         return Gson().fromJson(list, formType)
     }
 
-    fun setListContacts(list: List<Password>) {
+    fun setListSenhas(list: List<Password>) {
         sharedPreferences.edit().putString("senhas", Gson().toJson(list)).commit()
     }
 }
