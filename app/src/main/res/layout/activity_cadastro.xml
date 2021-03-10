@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.listadesenhas.CadastroActivity"
+    android:layout_gravity="center">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:hint="Login">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/inputLogintxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputLogin"
+        android:hint="Senha">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputSenhatxt"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputSenha"
+        android:hint="Categoria">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCategoriatxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/inputObs"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/inputCategoria"
+        android:layout_marginTop="-1dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Observação"
+        android:inputType="textMultiLine"
+        android:singleLine="false" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputObs"
+        android:layout_centerHorizontal="true"
+        android:text="Cadastrar" />
+
+
+</RelativeLayout>

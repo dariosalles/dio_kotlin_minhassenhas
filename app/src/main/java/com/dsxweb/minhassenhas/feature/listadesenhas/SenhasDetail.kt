@@ -1,10 +1,12 @@
-package com.dsxweb.minhassenhas
+package com.dsxweb.minhassenhas.feature.listadesenhas
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import com.dsxweb.minhassenhas.R
+import com.dsxweb.minhassenhas.feature.listadesenhas.model.Password
 
 class SenhasDetail : AppCompatActivity() {
 

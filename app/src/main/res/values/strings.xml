@@ -4,4 +4,5 @@
     <string name="txtBusca">Qual senha quer buscar?</string>
     <string name="emailpadrao">admin@admin</string>
     <string name="senhapadrao">123456</string>
+    <string name="submit">Cadastrar novo</string>
 </resources>

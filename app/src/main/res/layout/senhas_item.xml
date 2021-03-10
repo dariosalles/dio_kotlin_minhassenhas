@@ -7,7 +7,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="7dp"
     android:layout_margin="8dp"
-    app:cardCornerRadius="6dp">
+    app:cardCornerRadius="6dp"
+    android:id="@+id/llItem">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
