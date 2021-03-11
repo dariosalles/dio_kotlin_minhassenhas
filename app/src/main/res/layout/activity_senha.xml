@@ -63,7 +63,8 @@
                     android:id="@+id/etSenha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:inputType="textPassword"/>
 
             </LinearLayout>
 
@@ -124,6 +125,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Excluir senha" />
+
+
         </LinearLayout>
 
     </LinearLayout>
