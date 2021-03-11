@@ -20,7 +20,7 @@ class SenhaActivity : BaseActivity() {
         setupToolBar(toolBar, "Lista de Senhas",true)
         setupSenha()
         btnSalvarSenha.setOnClickListener { onClickSalvarSenha() }
-
+        btnExcluirSenha.setOnClickListener { onClickExcluirSenha() }
     }
 
     private fun setupSenha(){
@@ -72,7 +72,7 @@ class SenhaActivity : BaseActivity() {
         }).start()
     }
 
-    fun onClickExcluirSenha(view: View) {
+    private fun onClickExcluirSenha() {
         if(idSenha > -1){
             progress.visibility = View.VISIBLE
             Thread(Runnable {
