@@ -3,18 +3,18 @@
     package="com.dsxweb.minhassenhas">
 
     <application
+        android:name=".application.SenhasApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MinhasSenhas">
-        <activity android:name=".feature.listadesenhas.CadastroActivity"></activity>
         <activity android:name=".feature.listadesenhas.UserActivity" />
-        <activity android:name=".feature.listadesenhas.SenhasActivity" />
+        <activity android:name=".feature.listadesenhas.SenhasActivity"/>
         <activity android:name=".feature.senha.SenhaActivity"/>
         <activity android:name=".feature.listadesenhas.SenhasDetail" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".feature.listadesenhas.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -9,99 +9,105 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
-            app:titleTextColor="#FFFFFF"
-            android:background="#707070"
-            android:elevation="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:elevation="4dp"
+            app:titleTextColor="#FFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:background="#616161"
-                android:orientation="vertical">
+                android:background="#ECECEC"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Login"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/etLogin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:layout_marginTop="16dp"
-                android:background="#616161"
-                android:orientation="vertical">
+                android:background="#ECECEC"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Senha"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/etSenha"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:layout_marginTop="16dp"
-                android:background="#616161"
-                android:orientation="vertical">
+                android:background="#ECECEC"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Categoria"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/etCategoria"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:layout_marginTop="16dp"
-                android:background="#616161"
-                android:orientation="vertical">
+                android:background="#ECECEC"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Observação"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/etObs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 

@@ -9,23 +9,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:background="#616161"
-        android:orientation="vertical">
+        android:background="#ECECEC"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tvObs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Observação"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

@@ -3,12 +3,11 @@ package com.dsxweb.minhassenhas.feature.senha
 import android.os.Bundle
 import android.view.View
 import com.dsxweb.minhassenhas.R
-import com.dsxweb.minhassenhas.application.SenhasAplication
+import com.dsxweb.minhassenhas.application.SenhasApplication
 import com.dsxweb.minhassenhas.bases.BaseActivity
 import com.dsxweb.minhassenhas.feature.listadesenhas.model.Password
 import kotlinx.android.synthetic.main.activity_senha.*
-import kotlinx.android.synthetic.main.item_contato.*
-import kotlinx.android.synthetic.main.senhas_item.*
+import kotlinx.android.synthetic.main.activity_senha.toolBar
 
 class SenhaActivity : BaseActivity() {
 
@@ -20,7 +19,8 @@ class SenhaActivity : BaseActivity() {
 
         setupToolBar(toolBar, "Lista de Senhas",true)
         setupSenha()
-        //btnSalvarSenha.setOnClickListener { onClickSalvarSenha() }
+        btnSalvarSenha.setOnClickListener { onClickSalvarSenha() }
+
     }
 
     private fun setupSenha(){
@@ -32,7 +32,7 @@ class SenhaActivity : BaseActivity() {
         progress.visibility = View.VISIBLE
         Thread(Runnable {
             Thread.sleep(1500)
-            var lista = SenhasAplication.instance.helperDB?.buscarContatos("$idSenha",true) ?: return@Runnable
+            var lista = SenhasApplication.instance.helperDB?.buscarContatos("$idSenha",true) ?: return@Runnable
             var senha = lista.getOrNull(0) ?: return@Runnable
             runOnUiThread {
                 etLogin.setText(senha.login)
@@ -45,20 +45,25 @@ class SenhaActivity : BaseActivity() {
     }
 
     private fun onClickSalvarSenha(){
-        val login = tvLogin.text.toString()
-        val obs = tvObs.text.toString()
+        val login = etLogin.text.toString()
+        val senhav = etSenha.text.toString()
+        val categoria = etCategoria.text.toString()
+        val obs = etObs.text.toString()
+
         val senha = Password(
-                idSenha,
-                login,
-                obs
+            idSenha,
+            login,
+            senhav,
+            categoria,
+            obs
         )
         progress.visibility = View.VISIBLE
         Thread(Runnable {
             Thread.sleep(1500)
             if(idSenha == -1) {
-                SenhasAplication.instance.helperDB?.salvarContato(senha)
+                SenhasApplication.instance.helperDB?.salvarSenha(senha)
             }else{
-                SenhasAplication.instance.helperDB?.updateContato(senha)
+                SenhasApplication.instance.helperDB?.updateSenha(senha)
             }
             runOnUiThread {
                 progress.visibility = View.GONE
@@ -72,7 +77,7 @@ class SenhaActivity : BaseActivity() {
             progress.visibility = View.VISIBLE
             Thread(Runnable {
                 Thread.sleep(1500)
-                SenhasAplication.instance.helperDB?.deletarCoontato(idSenha)
+                SenhasApplication.instance.helperDB?.deletarSenha(idSenha)
                 runOnUiThread {
                     progress.visibility = View.GONE
                     finish()

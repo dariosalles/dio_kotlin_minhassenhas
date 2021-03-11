@@ -1,28 +1,28 @@
 package com.dsxweb.minhassenhas.feature.listadesenhas.adapter
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import android.content.Context
-import android.view.LayoutInflater
 import com.dsxweb.minhassenhas.R
 import com.dsxweb.minhassenhas.feature.listadesenhas.model.Password
-import kotlinx.android.synthetic.main.item_contato.view.*
-import kotlinx.android.synthetic.main.senhas_item.view.llItem
+import kotlinx.android.synthetic.main.item_senha.view.*
+
 
 class SenhaAdapter(
         private val context: Context,
         private val lista: List<Password>,
         private val onClick: ((Int) -> Unit)
-) : RecyclerView.Adapter<ContatoViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContatoViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_contato,parent,false)
-        return ContatoViewHolder(view)
+) : RecyclerView.Adapter<SenhaViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SenhaViewHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.item_senha,parent,false)
+        return SenhaViewHolder(view)
     }
 
     override fun getItemCount(): Int = lista.size
 
-    override fun onBindViewHolder(holder: ContatoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SenhaViewHolder, position: Int) {
         val senha = lista[position]
         with(holder.itemView){
             tvObs.text = senha.observacao
@@ -33,4 +33,4 @@ class SenhaAdapter(
 
 }
 
-class ContatoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+class SenhaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

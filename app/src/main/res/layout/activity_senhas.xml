@@ -16,13 +16,19 @@
             android:layout_height="wrap_content"
             android:background="@color/orange"
             android:elevation="4dp"
-            app:titleTextColor="#FFFFFF" />
+            app:titleTextColor="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_orange_light"
+            android:background="#ECECEC"
             android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar:"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/etBuscar"
@@ -30,9 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textColorLink="@color/black"
-                android:textCursorDrawable="@color/black" />
+                android:shadowColor="@color/orange"
+                android:textColor="#FFFFFF"
+                android:textColorLink="@color/white" />
 
             <ImageView
                 android:id="@+id/ivBuscar"
@@ -40,12 +46,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:src="@android:drawable/ic_search_category_default" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Buscar:"
-                android:textColor="#FFFFFF" />
         </LinearLayout>
         <FrameLayout
             android:layout_width="match_parent"
