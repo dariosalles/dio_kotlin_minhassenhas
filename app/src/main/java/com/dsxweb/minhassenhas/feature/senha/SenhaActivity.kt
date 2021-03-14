@@ -84,6 +84,7 @@ class SenhaActivity : BaseActivity() {
         idSenha = intent.getIntExtra("index",-1)
         if (idSenha == -1){
             btnExcluirSenha.visibility = View.GONE
+            layout_categoria.visibility = View.GONE
             return
         }
         progress.visibility = View.VISIBLE
@@ -113,7 +114,7 @@ class SenhaActivity : BaseActivity() {
         val login = etLogin.text.toString()
         val senhav = etSenha.text.toString()
         val scategoria = categoria
-        val categoria = etCategoria.text.toString()
+        //val categoria = etCategoria.text.toString()
         val obs = etObs.text.toString()
 
         println(scategoria)
@@ -122,7 +123,7 @@ class SenhaActivity : BaseActivity() {
             idSenha,
             login,
             senhav,
-            categoria,
+            scategoria,
             obs
         )
 
