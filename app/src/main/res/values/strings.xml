@@ -1,4 +1,14 @@
 <resources>
+    <string-array name="categorias">
+        <item>Banco</item>
+        <item>Email</item>
+        <item>Entretenimento</item>
+        <item>Internet</item>
+        <item>Jogos</item>
+        <item>Outro</item>
+        <item>Social</item>
+        <item>Trabalho</item>
+    </string-array>
     <string name="app_name">Minhas Senhas</string>
     <string name="logo_description">Minhas Senhas</string>
     <string name="txtBusca">Qual senha quer buscar?</string>

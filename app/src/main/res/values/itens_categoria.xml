@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="selected_item">Categoria Selecionada:</string>
+    <string-array name="categorias2">
+        <item>Banco</item>
+        <item>Email</item>
+        <item>Entretenimento</item>
+        <item>Internet</item>
+        <item>Jogos</item>
+        <item>Outro</item>
+        <item>Social</item>
+        <item>Trabalho</item>
+    </string-array>
+</resources>

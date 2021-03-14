@@ -69,6 +69,22 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#ECECEC"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <Spinner
+
+                    android:id="@+id/sp_categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -125,6 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Excluir senha" />
+
+
 
 
         </LinearLayout>
