@@ -37,7 +37,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_weight="1"
                 android:shadowColor="@color/orange"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
                 android:textColorLink="@color/white" />
 
             <ImageView
