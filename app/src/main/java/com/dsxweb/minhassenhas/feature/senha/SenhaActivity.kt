@@ -42,7 +42,6 @@ class SenhaActivity : BaseActivity() {
 
     fun setupSpinner() {
 
-
         val spinner: Spinner = findViewById(com.dsxweb.minhassenhas.R.id.sp_categoria)
 
         //Create an ArrayAdapter using the string array and a default spinner layout
