@@ -9,6 +9,10 @@ Olá, Bem vindo ao meu projeto de aprendizado na criação de app utilizando o c
 - Listagem de Senhas
 <br><br>
 
+<b>Acesso no APP</b><br>
+E-mail: admin@admin<br>  
+Senha: 123456<br><br>
+
 Apk - <a href="https://github.com/dariosalles/dio_kotlin_minhassenhas/releases/download/MinhasSenhas/minhassenhas.apk">Versão 1.0 - Pre-Release - Minhas Senhas</a>
 <br><br>
 Screen<br><br>
