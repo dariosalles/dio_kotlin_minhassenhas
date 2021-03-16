@@ -27,6 +27,7 @@ class SenhaAdapter(
         with(holder.itemView){
             tvObs.text = senha.observacao
             tvLogin.text = senha.login
+
             llItem.setOnClickListener { onClick(senha.id) }
         }
     }
