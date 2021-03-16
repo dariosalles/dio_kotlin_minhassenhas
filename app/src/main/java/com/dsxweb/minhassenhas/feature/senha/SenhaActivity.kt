@@ -1,20 +1,14 @@
 package com.dsxweb.minhassenhas.feature.senha
 
-import android.app.AlertDialog
-import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
-import androidx.annotation.StringRes
 import com.dsxweb.minhassenhas.R
 import com.dsxweb.minhassenhas.application.SenhasApplication
 import com.dsxweb.minhassenhas.bases.BaseActivity
 import com.dsxweb.minhassenhas.feature.listadesenhas.model.Password
-import com.dsxweb.minhassenhas.utils.SpinnerActivity
 import kotlinx.android.synthetic.main.activity_senha.*
 import kotlinx.android.synthetic.main.activity_senha.toolBar
 
@@ -22,11 +16,10 @@ class SenhaActivity : BaseActivity() {
 
     private var idSenha: Int = -1
 
+    var categorias = arrayOf("Banco", "Email", "Entretenimento", "Internet", "Jogos", "Outro", "Social", "Trabalho")
+    //var categoria = arrayOf("") // categoria selecionada
 
-    var categorias = arrayOf("Banco", "Email", "Entretenimento","Internet", "Jogos", "Outro", "Social", "Trabalho")
-    var categoria: String = ""
-
-
+    var catSelecionado: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,85 +27,87 @@ class SenhaActivity : BaseActivity() {
 
         setupToolBar(toolBar, "Lista de Senhas",true)
         setupSenha()
-        setupSpinner()
+        setupSpinner(categoria = "")
         btnSalvarSenha.setOnClickListener { onClickSalvarSenha() }
         btnExcluirSenha.setOnClickListener { onClickExcluirSenha() }
 
     }
 
-    fun setupSpinner() {
+    private fun setupSenha(){
+
+        idSenha = intent.getIntExtra("index",-1)
+
+        if (idSenha == -1){ // novo cadastro
+            btnExcluirSenha.visibility = View.GONE
+            //layout_categoria.visibility = View.GONE
+            return
+        }
+        progress.visibility = View.VISIBLE
+
+        Thread(Runnable {
+            Thread.sleep(1500)
+            var lista = SenhasApplication.instance.helperDB?.buscarContatos("$idSenha",true) ?: return@Runnable
+            var senha = lista.getOrNull(0) ?: return@Runnable
+
+            runOnUiThread {
+                setupSpinner(senha.categoria)
+                etLogin.setText(senha.login)
+                etSenha.setText(senha.senha)
+                //etCategoria.setText(senha.categoria)
+                etObs.setText(senha.observacao)
+                progress.visibility = View.GONE
+
+            }
+        }).start()
+    }
+
+    fun setupSpinner(categoria: String) {
 
         val spinner: Spinner = findViewById(com.dsxweb.minhassenhas.R.id.sp_categoria)
 
-        //Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(
-                this,
-                //categorias,
-                R.array.categorias,
-                android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
+        val categoriasAll = arrayOf(categoria) + this.categorias
+
+        idSenha = intent.getIntExtra("index",-1)
+        if (idSenha == -1) { // novo cadastro
+            spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, categorias)
+        } else { // edição de cadastro
+
+
+
+            spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, categoriasAll)
         }
 
         spinner.onItemSelectedListener = object :
                 AdapterView.OnItemSelectedListener {
+
             override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
                 // An item was selected. You can retrieve the selected item using
                 // parent.getItemAtPosition(pos)
-                categoria = categorias[pos]
+                if(idSenha == -1){
+                    catSelecionado = categorias[pos]
+                } else {
+                    catSelecionado = categoriasAll[pos]
+                }
 
-                showToast(categoria.toString())
+                //showToast(catSelecionado)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Another interface callback
             }
         }
-
         //FIM SPINNER
     }
 
 
 
-    private fun setupSenha(){
 
-
-        idSenha = intent.getIntExtra("index",-1)
-        if (idSenha == -1){
-            btnExcluirSenha.visibility = View.GONE
-            layout_categoria.visibility = View.GONE
-            return
-        }
-        progress.visibility = View.VISIBLE
-        Thread(Runnable {
-            Thread.sleep(1500)
-            var lista = SenhasApplication.instance.helperDB?.buscarContatos("$idSenha",true) ?: return@Runnable
-            var senha = lista.getOrNull(0) ?: return@Runnable
-
-            //val c = categorias.set(8,categoria)
-
-            //verifica a categoria
-
-            runOnUiThread {
-                etLogin.setText(senha.login)
-                etSenha.setText(senha.senha)
-                etCategoria.setText(senha.categoria)
-                etObs.setText(senha.observacao)
-                progress.visibility = View.GONE
-                sp_categoria.visibility = View.GONE
-                layout_spinner.visibility = View.GONE
-            }
-        }).start()
-    }
 
     private fun onClickSalvarSenha(){
 
         val login = etLogin.text.toString()
         val senhav = etSenha.text.toString()
-        val scategoria = categoria
+        val scategoria = catSelecionado
         //val categoria = etCategoria.text.toString()
         val obs = etObs.text.toString()
 
@@ -122,7 +117,7 @@ class SenhaActivity : BaseActivity() {
             idSenha,
             login,
             senhav,
-            scategoria,
+            catSelecionado,
             obs
         )
 
