@@ -17,8 +17,6 @@ class SenhaActivity : BaseActivity() {
     private var idSenha: Int = -1
 
     var categorias = arrayOf("Banco", "Email", "Entretenimento", "Internet", "Jogos", "Outro", "Social", "Trabalho")
-    //var categoria = arrayOf("") // categoria selecionada
-
     var catSelecionado: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,9 +69,6 @@ class SenhaActivity : BaseActivity() {
         if (idSenha == -1) { // novo cadastro
             spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, categorias)
         } else { // edição de cadastro
-
-
-
             spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, categoriasAll)
         }
 
@@ -99,10 +94,6 @@ class SenhaActivity : BaseActivity() {
         //FIM SPINNER
     }
 
-
-
-
-
     private fun onClickSalvarSenha(){
 
         val login = etLogin.text.toString()
@@ -111,7 +102,7 @@ class SenhaActivity : BaseActivity() {
         //val categoria = etCategoria.text.toString()
         val obs = etObs.text.toString()
 
-        println(scategoria)
+        //println(scategoria)
 
         val senha = Password(
             idSenha,
