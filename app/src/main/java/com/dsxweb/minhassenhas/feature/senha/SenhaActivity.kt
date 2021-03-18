@@ -99,16 +99,13 @@ class SenhaActivity : BaseActivity() {
         val login = etLogin.text.toString()
         val senhav = etSenha.text.toString()
         val scategoria = catSelecionado
-        //val categoria = etCategoria.text.toString()
         val obs = etObs.text.toString()
-
-        //println(scategoria)
 
         val senha = Password(
             idSenha,
             login,
             senhav,
-            catSelecionado,
+            scategoria,
             obs
         )
 
