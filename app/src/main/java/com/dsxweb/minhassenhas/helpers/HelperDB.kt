@@ -12,7 +12,7 @@ class HelperDB(
 
     companion object {
         private val NOME_BANCO = "senhas.db"
-        private val VERSAO_ATUAL = 2
+        private val VERSAO_ATUAL = 3
     }
 
     val TABLE_NAME = "senha"

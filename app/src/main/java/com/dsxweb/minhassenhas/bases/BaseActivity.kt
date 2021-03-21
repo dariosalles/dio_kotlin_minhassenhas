@@ -10,9 +10,6 @@ import androidx.appcompat.widget.Toolbar
 
 open class BaseActivity : AppCompatActivity(){
 
-
-
-
     protected fun setupToolBar(toolBar: Toolbar, title: String, navigationBack: Boolean) {
         toolBar.title = title
         setSupportActionBar(toolBar)

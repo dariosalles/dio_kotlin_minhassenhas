@@ -26,7 +26,7 @@ class SenhaActivity : BaseActivity() {
         setupToolBar(toolBar, "Lista de Senhas",true)
         setupSenha()
         setupSpinner(categoria = "")
-        btnSalvarSenha.setOnClickListener { onClickSalvarSenha() }
+        btnSalvar.setOnClickListener { onClickSalvarSenha() }
         btnExcluirSenha.setOnClickListener { onClickExcluirSenha() }
 
     }
@@ -49,10 +49,10 @@ class SenhaActivity : BaseActivity() {
 
             runOnUiThread {
                 setupSpinner(senha.categoria)
-                etLogin.setText(senha.login)
-                etSenha.setText(senha.senha)
+                etNome.setText(senha.login)
+                etEmail.setText(senha.senha)
                 //etCategoria.setText(senha.categoria)
-                etObs.setText(senha.observacao)
+                etEmail.setText(senha.observacao)
                 progress.visibility = View.GONE
 
             }
@@ -96,10 +96,10 @@ class SenhaActivity : BaseActivity() {
 
     private fun onClickSalvarSenha(){
 
-        val login = etLogin.text.toString()
-        val senhav = etSenha.text.toString()
+        val login = etNome.text.toString()
+        val senhav = etEmail.text.toString()
         val scategoria = catSelecionado
-        val obs = etObs.text.toString()
+        val obs = etEmail.text.toString()
 
         val senha = Password(
             idSenha,

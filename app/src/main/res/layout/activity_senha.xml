@@ -91,7 +91,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/etLogin"
+                    android:id="@+id/etNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black" />
@@ -113,7 +113,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/etSenha"
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -136,7 +136,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/etObs"
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black" />
@@ -145,7 +145,7 @@
 
 
             <Button
-                android:id="@+id/btnSalvarSenha"
+                android:id="@+id/btnSalvar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

@@ -2,6 +2,8 @@ package com.dsxweb.minhassenhas.feature.listadesenhas
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +15,7 @@ import com.dsxweb.minhassenhas.feature.listadesenhas.model.Password
 import com.dsxweb.minhassenhas.feature.senha.SenhaActivity
 import kotlinx.android.synthetic.main.activity_senhas.*
 
+
 class SenhasActivity : BaseActivity() {
 
     private var adapter:SenhaAdapter? = null
@@ -21,12 +24,34 @@ class SenhasActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_senhas)
 
-        setupToolBar(toolBar, "Lista de Senhas", false)
+        setupToolBar(toolBar, "Lista de Senhas", true)
         setupListView()
         setupOnClicks()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        val id: Int = item.getItemId()
+        return if (id == R.id.config) {
+
+            val intent = Intent(this, UserActivity::class.java)
+            startActivity(intent)
+
+            showToast("Configurações")
+            true
+        } else super.onOptionsItemSelected(item)
+    }
+
     private fun setupOnClicks() {
+
         fab.setOnClickListener { onClickAdd() }
         ivBuscar.setOnClickListener { onClickBuscar() }
     }
@@ -58,7 +83,8 @@ class SenhasActivity : BaseActivity() {
             Thread.sleep(1500)
             var listaFiltrada: List<Password> = mutableListOf()
             try {
-                listaFiltrada = SenhasApplication.instance.helperDB?.buscarContatos(busca) ?: mutableListOf()
+                listaFiltrada =
+                    SenhasApplication.instance.helperDB?.buscarContatos(busca) ?: mutableListOf()
             } catch (ex: Exception) {
                 ex.printStackTrace()
             }

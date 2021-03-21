@@ -5,8 +5,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class UserAdmin (
-    var name: String,
-    var email: String,
-    var senha: String
+    val name: String,
+    val email: String,
+    val senha: String
 
 ) : Parcelable

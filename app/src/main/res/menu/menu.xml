@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:icon="@android:drawable/ic_menu_add"
-        android:title="Cadastrar Nova Senha" />
+        android:id="@+id/config"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Configurações" />
 </menu>
