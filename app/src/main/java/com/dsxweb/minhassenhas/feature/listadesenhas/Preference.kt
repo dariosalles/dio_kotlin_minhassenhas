@@ -57,6 +57,7 @@ class Preference(context: Context) : BaseActivity() {
 
     fun setLogin(nome: String, email: String, senha: String): Boolean {
 
+        //verificar campos vazios
         val n = nome
         val e = email
         val s = senha
@@ -65,9 +66,10 @@ class Preference(context: Context) : BaseActivity() {
 
         val editor = preference.edit()
         editor.putString(PREFERENCE_USER_ADMIN, jsonString)
-        editor.commit() //m uma thread separada evitando assim ao consultar os dados que a thread tenha finalizado
+        editor.commit()
 
         return true
+
 
     }
 

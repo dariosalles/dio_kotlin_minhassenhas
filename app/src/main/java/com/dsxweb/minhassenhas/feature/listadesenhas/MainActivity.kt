@@ -16,7 +16,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_login)
 
         //CLEAR SHARED PREFERENCES
-        //Preference(this).clearLogin()
+        Preference(this).clearLogin()
 
         //VERIFICA SE JÁ EXISTE UMA SENHA MESTRE CADASTRADA
         val rp = Preference(this ).verifyLogin()
@@ -27,10 +27,8 @@ class MainActivity : BaseActivity() {
             btnLogin.visibility = View.GONE
         }
 
-        // ACAO AO CLICAR NO BOTAO ACESSAR
+        // ACAO AO CLICAR NO BOTAO ACESSARdariosalles
         btnLogin.setOnClickListener {
-
-
 
             val tEmail = LayoutEmail.txtEmail.text.toString()
             val tSenha = LayoutSenha.txtSenha.text.toString()
@@ -55,8 +53,22 @@ class MainActivity : BaseActivity() {
 
         // ACAO AO CLICAR NO BOTAO CADASTRAR
         btnCadastrar.setOnClickListener {
-            val intent = Intent(this, CadastroActivity::class.java)
-            startActivity(intent)
+
+            val email: String = txtEmail.text.toString()
+            val senha: String = txtSenha.text.toString()
+
+            if(email.isNotEmpty() && senha.isNotEmpty()) {
+
+                val intent = Intent(this, CadastroActivity::class.java)
+                intent.putExtra("email", email)
+                intent.putExtra("senha", senha)
+                //intent.putExtra("email", "dariosalles@gmail.com")
+                startActivity(intent)
+
+            } else {
+                showToast("Preencha os campos Email e Senha")
+            }
+
         }
 
     }
