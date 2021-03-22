@@ -65,7 +65,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Salvar Dados" />
+        android:text="Salvar Dados"
+        app:icon="@android:drawable/ic_menu_save" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="Excluir Usuário"
+        android:textColorLink="@android:color/holo_red_dark"
+        app:icon="@android:drawable/ic_delete" />
 
     <ProgressBar
         android:id="@+id/progress"

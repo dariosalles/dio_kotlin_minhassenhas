@@ -16,7 +16,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_login)
 
         //CLEAR SHARED PREFERENCES
-        Preference(this).clearLogin()
+        //Preference(this).clearLogin()
 
         //VERIFICA SE JÁ EXISTE UMA SENHA MESTRE CADASTRADA
         val rp = Preference(this ).verifyLogin()

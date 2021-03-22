@@ -43,6 +43,21 @@ class UserActivity : BaseActivity() {
                 showToast("Erro ao Atualizar")
             }
         }
+
+        btnClear.setOnClickListener {
+            val clear = Preference(this).clearLogin()
+            if(clear){
+
+                showToast("Usuário excluido com sucesso")
+
+                Thread.sleep(1500)
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            } else {
+                showToast("Erro ao excluir o usuário")
+            }
+        }
     }
 
     override fun onResume() {

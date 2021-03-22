@@ -73,9 +73,10 @@ class Preference(context: Context) : BaseActivity() {
 
     }
 
-    fun clearLogin() {
+    fun clearLogin() : Boolean {
         preference.edit{
             clear()
         }
+        return true
     }
 }
