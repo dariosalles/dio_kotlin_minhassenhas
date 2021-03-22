@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.dsxweb.minhassenhas.R
 import com.dsxweb.minhassenhas.bases.BaseActivity
+import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.view.*
 
@@ -22,9 +23,34 @@ class MainActivity : BaseActivity() {
         val rp = Preference(this ).verifyLogin()
         if(rp){
 
+            LayoutNome.visibility = View.GONE
             btnCadastrar.visibility = View.GONE
+
         } else {
+
             btnLogin.visibility = View.GONE
+        }
+
+        btnCadastrar.setOnClickListener {
+
+            val nome = txtNome.text.toString()
+            val email = txtEmail.text.toString()
+            val senha = txtSenha.text.toString()
+
+            if(nome.isNotEmpty() && email.isNotEmpty() && senha.isNotEmpty()) {
+
+                val save = Preference(this).setLogin(etNome.text.toString(), etEmail.text.toString(), etSenha.text.toString())
+
+                if(save){
+                    showToast("Cadastro feito com sucesso")
+                    //finish()
+                } else {
+                    showToast("Erro ao cadastrar")
+                }
+            } else {
+                showToast("Preencha Nome, Email e Senha")
+            }
+
         }
 
         // ACAO AO CLICAR NO BOTAO ACESSARdariosalles
@@ -54,19 +80,22 @@ class MainActivity : BaseActivity() {
         // ACAO AO CLICAR NO BOTAO CADASTRAR
         btnCadastrar.setOnClickListener {
 
-            val email: String = txtEmail.text.toString()
-            val senha: String = txtSenha.text.toString()
+            val nome = txtNome.text.toString()
+            val email = txtEmail.text.toString()
+            val senha = txtSenha.text.toString()
 
-            if(email.isNotEmpty() && senha.isNotEmpty()) {
+            if(nome.isNotEmpty() && email.isNotEmpty() && senha.isNotEmpty()) {
 
-                val intent = Intent(this, CadastroActivity::class.java)
-                intent.putExtra("email", email)
-                intent.putExtra("senha", senha)
-                //intent.putExtra("email", "dariosalles@gmail.com")
-                startActivity(intent)
+                val save = Preference(this).setLogin(nome, email, senha)
 
+                if(save){
+                    showToast("Cadastro feito com sucesso")
+                    onResume()
+                } else {
+                    showToast("Erro ao cadastrar")
+                }
             } else {
-                showToast("Preencha os campos Email e Senha")
+                showToast("Preencha Nome, Email e Senha")
             }
 
         }
@@ -78,7 +107,7 @@ class MainActivity : BaseActivity() {
 
         val rp = Preference(this ).verifyLogin()
         if(rp){
-
+            LayoutNome.visibility = View.GONE
             btnCadastrar.visibility = View.GONE
             btnLogin.visibility = View.VISIBLE
         } else {

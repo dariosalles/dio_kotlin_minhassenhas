@@ -122,14 +122,13 @@
                 </LinearLayout>
 
 
-
-
                 <Button
                     android:id="@+id/btnSalvar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Salvar Cadastro" />
+                    android:text="Salvar Cadastro"
+                    app:icon="@android:drawable/ic_menu_save" />
 
 
             </LinearLayout>

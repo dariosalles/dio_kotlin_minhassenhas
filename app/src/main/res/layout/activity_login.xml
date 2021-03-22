@@ -8,61 +8,55 @@
     android:layout_height="match_parent"
     android:background="@drawable/fundo19">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:orientation="vertical"
         tools:context=".feature.listadesenhas.MainActivity">
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:layout_marginTop="30dp"
+            android:id="@+id/logo"
+            android:layout_gravity="center"
             android:layout_width="306dp"
             android:layout_height="95dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
             android:contentDescription="@string/logo_description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo_minhassenhas" />
 
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/LayoutNome"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:text="Acessar"
-            app:backgroundTint="@android:color/holo_orange_dark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LayoutSenha" />
+            android:layout_marginRight="30dp">
 
-        <Button
-            android:id="@+id/btnCadastrar"
-            android:layout_width="0dp"
+            <EditText
+                android:id="@+id/txtNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/LayoutEmail"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:text="Cadastrar"
-            app:backgroundTint="@android:color/holo_orange_light"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+            android:layout_marginRight="30dp">
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/LayoutSenha"
@@ -72,10 +66,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LayoutEmail">
+            android:layout_marginRight="30dp">
 
             <EditText
                 android:id="@+id/txtSenha"
@@ -85,37 +76,40 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="171dp"
-            android:layout_height="157dp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCadastrar"
-            app:srcCompat="@drawable/icon" />
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Acessar"
+            app:backgroundTint="@android:color/holo_orange_dark"
+            app:icon="@android:drawable/ic_media_play" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/LayoutEmail"
+
+        <Button
+            android:id="@+id/btnCadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView">
+            android:text="Cadastrar"
+            app:backgroundTint="@android:color/holo_orange_light"
+            app:icon="@android:drawable/ic_menu_edit" />
 
-            <EditText
-                android:id="@+id/txtEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="E-mail"/>
+        <ImageView
+            android:id="@+id/iconbottom"
+            android:layout_width="171dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="40dp"
+            app:srcCompat="@drawable/icon"
+            android:layout_gravity="center"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

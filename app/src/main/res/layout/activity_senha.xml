@@ -149,14 +149,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Salvar senha" />
+                android:text="Salvar senha"
+                app:icon="@android:drawable/ic_menu_save" />
 
             <Button
                 android:id="@+id/btnExcluirSenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Excluir senha" />
+                android:text="Excluir senha"
+                app:icon="@android:drawable/ic_delete" />
 
 
         </LinearLayout>
