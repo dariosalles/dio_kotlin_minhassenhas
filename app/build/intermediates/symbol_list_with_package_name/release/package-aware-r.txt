@@ -1701,6 +1701,7 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id LayoutEmail
+id LayoutNome
 id LayoutSenha
 id META
 id NO_DEBUG
@@ -1895,13 +1896,12 @@ id homeAsUp
 id honorRequest
 id icon
 id icon_group
+id iconbottom
 id icone_senha
 id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
-id imageView2
 id info
 id invisible
 id inward
@@ -1924,6 +1924,7 @@ id linearLayout
 id listMode
 id list_item
 id llItem
+id logo
 id masked
 id material_clock_display
 id material_clock_face
