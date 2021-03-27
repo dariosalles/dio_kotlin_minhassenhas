@@ -10,7 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MinhasSenhas">
-        <activity android:name=".feature.listadesenhas.CadastroActivity"></activity>
         <activity android:name=".feature.listadesenhas.UserActivity" />
         <activity android:name=".feature.listadesenhas.SenhasActivity" />
         <activity android:name=".feature.senha.SenhaActivity" />

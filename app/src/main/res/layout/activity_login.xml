@@ -79,6 +79,25 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/LayoutCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="?attr/colorButtonNormal">
+
+            <CheckBox
+                android:id="@+id/cbLembrar"
+                android:layout_width="381dp"
+                android:layout_height="wrap_content"
+                android:text="Lembrar Me" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"

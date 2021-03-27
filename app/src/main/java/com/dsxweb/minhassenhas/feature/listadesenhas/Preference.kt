@@ -1,15 +1,10 @@
 package com.dsxweb.minhassenhas.feature.listadesenhas
 
 import android.content.Context
-import android.content.Intent
-import android.view.View
 import androidx.core.content.edit
 import com.dsxweb.minhassenhas.bases.BaseActivity
 import com.dsxweb.minhassenhas.feature.listadesenhas.model.UserAdmin
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_cadastro.*
-import kotlinx.android.synthetic.main.activity_user.*
-import kotlinx.android.synthetic.main.activity_user.progress
 
 class Preference(context: Context) : BaseActivity() {
 
