@@ -1,2 +1,0 @@
-com/dsxweb/minhassenhas/BuildConfig.java
- com.dsxweb.minhassenhas.BuildConfig
